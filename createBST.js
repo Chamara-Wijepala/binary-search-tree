@@ -43,11 +43,53 @@ function createBST(array) {
     return root;
   }
 
+  function deleteRec(data, root) {
+    if (root === null) return root;
+
+    if (data < root.value) {
+      root.left = deleteRec(data, root.left);
+    } else if (data > root.value) {
+      root.right = deleteRec(data, root.right);
+    }
+    // if data is the same as root.value then this node should be deleted
+    else {
+      // if node has only 1 or no children
+      if (root.left === null) {
+        return root.right;
+      } else if (root.right === null) {
+        return root.left;
+      }
+
+      // node has 2 children: get the smallest value in the right subtree
+      root.value = findMinValue(root.right);
+
+      // delete inorder successor
+      root.right = deleteRec(root.value, root.right);
+    }
+
+    return root;
+  }
+
+  function findMinValue(root) {
+    let minValue = root.value;
+
+    while (root.left !== null) {
+      minValue = root.left.value;
+      root = root.left;
+    }
+
+    return minValue;
+  }
+
   return {
     root,
 
     insert(data) {
       root = insertRec(data, root);
+    },
+
+    delete(data) {
+      root = deleteRec(data, root);
     },
   };
 }

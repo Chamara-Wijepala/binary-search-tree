@@ -18,3 +18,6 @@ console.log(fixedTree.root.right);
 
 fixedTree.insert(2);
 console.log(fixedTree.root);
+
+fixedTree.delete(5);
+console.log(fixedTree.root);
