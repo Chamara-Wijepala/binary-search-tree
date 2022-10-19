@@ -14,6 +14,8 @@ function createBST(array) {
     return array.indexOf(value) === index;
   });
 
+  let root = buildTree(filteredArray, 0, filteredArray.length - 1);
+
   function buildTree(array, start, end) {
     if (start > end) return null;
 
@@ -26,9 +28,28 @@ function createBST(array) {
     return node;
   }
 
-  let root = buildTree(filteredArray, 0, filteredArray.length - 1);
+  function insertRec(data, root) {
+    if (root === null) {
+      const node = createNode(data);
+      return node;
+    }
 
-  return root;
+    if (data < root.value) {
+      root.left = insertRec(data, root.left);
+    } else if (data > root.value) {
+      root.right = insertRec(data, root.right);
+    }
+
+    return root;
+  }
+
+  return {
+    root,
+
+    insert(data) {
+      root = insertRec(data, root);
+    },
+  };
 }
 
 module.exports = createBST;
