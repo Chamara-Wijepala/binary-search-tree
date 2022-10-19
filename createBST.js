@@ -107,6 +107,26 @@ function createBST(array) {
     find(data) {
       return findRec(data, root);
     },
+
+    levelOrderIt(callback = null) {
+      let result = [];
+      let queue = [];
+
+      if (root === null) return;
+
+      queue.push(root);
+
+      while (queue.length > 0) {
+        let current = queue.shift();
+
+        callback ? callback(current) : result.push(current.value);
+
+        if (current.left !== null) queue.push(current.left);
+        if (current.right !== null) queue.push(current.right);
+      }
+
+      return result;
+    },
   };
 }
 

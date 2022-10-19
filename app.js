@@ -24,3 +24,6 @@ console.log(fixedTree.root);
 
 console.log(fixedTree.find(3));
 console.log(fixedTree.find(7));
+
+console.log(fixedTree.levelOrderIt());
+fixedTree.levelOrderIt((node) => console.log(node.value));
