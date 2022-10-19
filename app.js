@@ -21,3 +21,6 @@ console.log(fixedTree.root);
 
 fixedTree.delete(5);
 console.log(fixedTree.root);
+
+console.log(fixedTree.find(3));
+console.log(fixedTree.find(7));

@@ -70,6 +70,18 @@ function createBST(array) {
     return root;
   }
 
+  function findRec(data, root) {
+    if (root === null) return null;
+
+    if (data === root.value) return root;
+
+    if (data < root.value) {
+      return findRec(data, root.left);
+    } else if (data > root.value) {
+      return findRec(data, root.right);
+    }
+  }
+
   function findMinValue(root) {
     let minValue = root.value;
 
@@ -90,6 +102,10 @@ function createBST(array) {
 
     delete(data) {
       root = deleteRec(data, root);
+    },
+
+    find(data) {
+      return findRec(data, root);
     },
   };
 }
