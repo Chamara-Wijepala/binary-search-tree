@@ -30,3 +30,12 @@ fixedTree.levelOrderIt((node) => console.log(node.value));
 
 console.log(fixedTree.levelOrderRec());
 fixedTree.levelOrderRec((node) => console.log(node.value));
+
+console.log(fixedTree.inorder());
+console.log(fixedTree.inorder((node) => console.log(node.value)));
+
+console.log(fixedTree.preorder());
+console.log(fixedTree.preorder((node) => console.log(node.value)));
+
+console.log(fixedTree.postorder());
+console.log(fixedTree.postorder((node) => console.log(node.value)));

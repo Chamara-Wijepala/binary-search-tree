@@ -144,6 +144,42 @@ function createBST(array) {
 
       return result;
     },
+
+    inorder(callback = null, result = [], root = this.root) {
+      if (root === null) return;
+
+      this.inorder(callback, result, root.left);
+
+      callback ? callback(root) : result.push(root.value);
+
+      this.inorder(callback, result, root.right);
+
+      return result;
+    },
+
+    preorder(callback = null, result = [], root = this.root) {
+      if (root === null) return;
+
+      callback ? callback(root) : result.push(root.value);
+
+      this.preorder(callback, result, root.left);
+
+      this.preorder(callback, result, root.right);
+
+      return result;
+    },
+
+    postorder(callback = null, result = [], root = this.root) {
+      if (root === null) return;
+
+      this.postorder(callback, result, root.left);
+
+      this.postorder(callback, result, root.right);
+
+      callback ? callback(root) : result.push(root.value);
+
+      return result;
+    },
   };
 }
 
