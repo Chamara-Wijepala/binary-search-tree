@@ -127,6 +127,23 @@ function createBST(array) {
 
       return result;
     },
+
+    levelOrderRec(callback = null, result = [], queue = [], root = this.root) {
+      if (root === null) return;
+
+      callback ? callback(root) : result.push(root.value);
+
+      queue.push(root.left);
+      queue.push(root.right);
+
+      while (queue.length > 0) {
+        const next = queue[0];
+        queue.shift();
+        this.levelOrderRec(callback, result, queue, next);
+      }
+
+      return result;
+    },
   };
 }
 
