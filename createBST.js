@@ -222,6 +222,12 @@ function createBST(array) {
 
       return false;
     },
+
+    rebalance() {
+      const inOrderList = this.inorder();
+
+      this.root = buildTree(inOrderList, 0, inOrderList.length - 1);
+    },
   };
 }
 

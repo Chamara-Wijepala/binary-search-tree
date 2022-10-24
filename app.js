@@ -59,3 +59,17 @@ balancedTree.insert(7);
 balancedTree.insert(8);
 balancedTree.insert(9);
 console.log(balancedTree.isBalanced());
+
+balancedTree.rebalance();
+console.log(balancedTree.root);
+console.log(balancedTree.isBalanced());
+
+console.log(balancedTree.levelOrderIt());
+
+console.log(balancedTree.levelOrderRec());
+
+console.log(balancedTree.inorder());
+
+console.log(balancedTree.preorder());
+
+console.log(balancedTree.postorder());
