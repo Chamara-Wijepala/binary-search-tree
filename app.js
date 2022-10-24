@@ -51,3 +51,11 @@ console.log(fixedTree.depth(depthOf2));
 console.log(fixedTree.depth(depthOf3));
 console.log(fixedTree.depth(depthOf4));
 console.log(fixedTree.depth(depthOf6));
+
+const balancedTree = createBST([1, 2, 3, 4, 5]);
+console.log(balancedTree.isBalanced());
+balancedTree.insert(6);
+balancedTree.insert(7);
+balancedTree.insert(8);
+balancedTree.insert(9);
+console.log(balancedTree.isBalanced());

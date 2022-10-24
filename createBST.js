@@ -211,6 +211,17 @@ function createBST(array) {
 
       return depth;
     },
+
+    isBalanced(root = this.root) {
+      const leftHeight = this.height(root.left);
+      const rightHeight = this.height(root.right);
+
+      const diff = Math.abs(leftHeight - rightHeight);
+
+      if (diff <= 1) return true;
+
+      return false;
+    },
   };
 }
 
