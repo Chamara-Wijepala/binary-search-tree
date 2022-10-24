@@ -189,6 +189,28 @@ function createBST(array) {
 
       return Math.max(leftHeight, rightHeight) + 1;
     },
+
+    depth(node, root = this.root) {
+      let depth = 0;
+
+      if (root === null) {
+        return depth;
+      }
+
+      if (node.value === root.value) {
+        depth += 1;
+        return depth;
+      }
+
+      depth += this.depth(node, root.left);
+      depth += this.depth(node, root.right);
+
+      if (depth > 0) {
+        depth += 1;
+      }
+
+      return depth;
+    },
   };
 }
 

@@ -42,3 +42,12 @@ console.log(fixedTree.postorder());
 console.log(fixedTree.postorder((node) => console.log(node.value)));
 
 console.log(fixedTree.height());
+
+const depthOf2 = fixedTree.find(2);
+const depthOf3 = fixedTree.find(3);
+const depthOf4 = fixedTree.find(4);
+const depthOf6 = fixedTree.find(6);
+console.log(fixedTree.depth(depthOf2));
+console.log(fixedTree.depth(depthOf3));
+console.log(fixedTree.depth(depthOf4));
+console.log(fixedTree.depth(depthOf6));
