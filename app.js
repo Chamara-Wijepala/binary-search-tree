@@ -9,6 +9,7 @@ const randomTree = createBST(randomNumArray(10, 100));
 console.log(randomTree.root);
 
 const fixedTree = createBST([1, 2, 4, 5]);
+console.log(fixedTree);
 
 fixedTree.insert(3);
 console.log(fixedTree.root);
@@ -39,3 +40,5 @@ console.log(fixedTree.preorder((node) => console.log(node.value)));
 
 console.log(fixedTree.postorder());
 console.log(fixedTree.postorder((node) => console.log(node.value)));
+
+console.log(fixedTree.height());
